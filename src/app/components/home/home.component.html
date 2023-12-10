@@ -1,0 +1,109 @@
+<body>
+  <header class="jumbotron jumbotron-fluid mt-2 bg-dark text-white text-center">
+    <div class="container">
+      <h1 class="display-4 mt-0">Homepage</h1>
+      <p class="intro pb-4">
+        Benvenuto sulla Homepage di Epiplex una sorta di database di film e
+        serie TV.
+      </p>
+    </div>
+  </header>
+
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-4 mb-4">
+        <div class="card h-100 bg-dark text-white shadow">
+          <h4 class="card-header text-center px-2">Server Status</h4>
+
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              <input
+                class="mx-auto"
+                [(ngModel)]="serverStatus"
+                placeholder="Server Status"
+                readonly
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-lg-4 mb-4">
+        <div class="card h-100 shadow">
+          <div class="card-body rounded-top pb-0 bg-dark text-white">
+            <h4 class="text-center">Numero di Film Preferiti</h4>
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li class="nav-item">
+                <span>3</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="tab-content bg-dark rounded-bottom"
+            id="contentRatingTabContent"
+          >
+            <div class="tab-pane rounded-bottom active bg-white">
+              <ul class="list-group list-group-flush"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-lg-4 mb-4">
+        <div class="card h-100 shadow">
+          <div class="card-body rounded-top pb-0 bg-dark text-white">
+            <h4 class="text-center">Top Genres</h4>
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li class="nav-item">
+                <span>Action, Drama, Thriller</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content bg-dark rounded-bottom" id="genreTabContent">
+            <div class="tab-pane rounded-bottom active bg-white">
+              <ul class="list-group list-group-flush"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="align-items-center">Top-Rated Movies on Epiplex</h2>
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-md-3 mb-5" *ngFor="let movie of movies">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="http://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+              alt="movie.title"
+            />
+            <div class="card-body">
+              <h4 class="card-title">{{ movie.title }}</h4>
+              <a
+                [routerLink]="['/movie-details', movie.id]"
+                class="btn btn-primary"
+                >Movie Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="container">
+    <footer
+      class="p-3 bg-dark text-white rounded d-flex align-items-center justify-content-center shadow fixed-bottom"
+    >
+      <small>
+        Progetto Angular svolto durante la Unit 3 Week 3 di Epicode
+      </small>
+    </footer>
+  </div>
+</body>
+<video autoplay muted loop id="myVideo">
+  <source src="../../../assets/matrix.mp4" type="video/mp4" />
+</video>

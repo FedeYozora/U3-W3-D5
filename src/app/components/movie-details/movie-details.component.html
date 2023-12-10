@@ -1,0 +1,23 @@
+<div class="container mt-5 movieInfo">
+  <h2>{{ movie.title }}</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <img
+        [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+        alt="{{ movie.title }}"
+        class="img-fluid"
+      />
+    </div>
+    <div class="col-md-8">
+      <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+      <p><strong>Vote Average:</strong> {{ movie.vote_average }}</p>
+      <p>
+        <strong>Overview:</strong> <br />
+        {{ movie.overview }}
+      </p>
+    </div>
+  </div>
+</div>
+<video autoplay muted loop id="myVideo">
+  <source src="../../../assets/matrix.mp4" type="video/mp4" />
+</video>

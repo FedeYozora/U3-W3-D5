@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <form #form="ngForm" (ngSubmit)="accedi(form)">
+    <div class="form-group text-white mb-2">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required
+        class="form-control"
+        ngModel
+      />
+    </div>
+    <div class="form-group text-white mb-2">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        required
+        class="form-control"
+        ngModel
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary mt-3"
+      [disabled]="form.invalid"
+    >
+      Accedi
+    </button>
+  </form>
+</div>
+<video autoplay muted loop id="myVideo">
+  <source src="../../../assets/matrix.mp4" type="video/mp4" />
+</video>

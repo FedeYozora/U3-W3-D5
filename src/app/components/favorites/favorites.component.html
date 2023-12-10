@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <div class="row">
+    <div
+      *ngIf="films.length === 0"
+      class="col-md-4 p-3 offset-4 text-center text-dark bg-white rounded"
+    >
+      Non sono presenti film preferiti. 🤔
+    </div>
+
+    <div *ngFor="let fav of films" class="col-md-4 mt-2">
+      <div class="card">
+        <img
+          src="http://image.tmdb.org/t/p/w500{{ fav.poster_path }}"
+          class="card-img-top"
+          alt="fav Poster"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ fav.title }}</h5>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="removeFavorite(fav.id)"
+          >
+            Rimuovi
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<video autoplay muted loop id="myVideo">
+  <source src="../../../assets/matrix.mp4" type="video/mp4" />
+</video>

@@ -1,0 +1,45 @@
+<div>
+  <h2 class="mt-2 text-center my-4 text-white">
+    Le tue informazioni personali
+  </h2>
+
+  <div class="card mb-3 mx-auto" style="max-width: 540px">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="../../../assets/user.jpg"
+          class="img-fluid rounded-start"
+          alt="Immagine Utente Placeholder"
+        />
+      </div>
+      <div class="col-md-8 profileCont">
+        <div class="card-body">
+          <h5 class="card-title">Ciao {{ utente.user.username }}!</h5>
+          <h5 class="card-text">
+            Ecco i dati da te forniti durante la registrazione:
+          </h5>
+          <p>
+            Nome: <br />
+            {{ utente.user.name }}
+          </p>
+          <p>
+            Cognome: <br />
+            {{ utente.user.surname }}
+          </p>
+          <p>
+            Email: <br />
+            {{ utente.user.email }}
+          </p>
+          <p class="card-text">
+            <small class="text-muted"
+              >Last updated {{ currentDateAndTime }}</small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<video autoplay muted loop id="myVideo">
+  <source src="../../../assets/matrix.mp4" type="video/mp4" />
+</video>
